@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h1>作者-图书管理类</h1>
+<hr>
+<body>
+<form method="post">
+    <input id="csrf_token" name="csrf_token" type="hidden" value="{{ csrf_token }}">
+    <label>作者：</label> <input id="author" name="author" type="text" value=""><br/>
+    <label>书名：</label> <input id="book" name="book" type="text" value=""><br/>
+    <input id="submit" name="submit" type="submit" value="添加"><br/>
+</form>
+<hr>
+{% for message in get_flashed_messages() %}
+    {{ message }}
+    <br>
+{% endfor %}
+
+<
+<hr>
+
+<ul>
+    {% for author in authors %}
+        {# 127.0.0.1:5000/delete_author/1 (url路径)--->  <user_id>      #}
+        {# 127.0.0.1:5000/delete_author?id=1 (url路径+参数) ---> request.args.get('id')      #}
+        <li>{{ author.name }} <a href="/delete_author/{{ author.id }}">删除</a>
+
+            <ul>
+                {#通过作者对象的关系属性books就能获取所有书籍#}
+                {% for book in author.books %}
+                    <li>{{ book.name }} <a href="/delete_book/{{ book.id }}">删除</a>
+
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>
+
+
+</body>
+</html>

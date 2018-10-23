@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<br>
+字符串过滤的使用
+<br>
+
+{{ 'itcast' |  upper }}
+<br>
+{{ 'ITCSET' | lower }}
+<br>
+{{ 'itcast' |  title }}
+<br>
+{{ 'itcast' |  reverse }}
+<br>
+
+<hr>
+过滤器链式调用
+<br>
+{{ "itcast" | upper | reverse }}
+<br>
+<hr>
+列表过滤器的使用
+<br>
+{{ list }}
+<br>
+{{ list | first }}
+<br>
+{{ list | last }}
+<br>
+{{ list | length }}
+<br>
+{{ list | sort }}
+
+<hr>
+对商品价格求和(过滤器传入参数的使用)
+<br>
+{{ goods_list | sum(attribute='price') }}
+<br>
+</body>
+</html>

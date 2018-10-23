@@ -1,0 +1,10 @@
+
+{#1.使用extends关键字继承父模板#}
+{% extends "base.html" %}
+
+
+{#3.重写父类中的block#}
+{% block contentBlock %}
+    {{ super() }}
+    <h2>我是子类的内容！！！！！！！</h2>
+{% endblock %}

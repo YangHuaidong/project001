@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+模板的控制代码块使用
+<body>
+<br>
+{% for item in my_list %}
+    {% if item.id != 5 %}
+        {% if loop.index ==1 %}
+            <li style="background: cyan">{{ item.value }}</li>
+        {% elif loop.index ==2 %}
+            <li style="background: deeppink">{{ item.value }}</li>
+        {% elif loop.index ==3 %}
+            <li style="background: greenyellow">{{ item.value }}</li>
+        {% elif loop.index ==4 %}
+            <li style="background: darkmagenta">{{ item.value }}</li>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+</body>
+</html>

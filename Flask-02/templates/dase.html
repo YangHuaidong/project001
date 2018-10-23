@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2>我是top栏</h2>
+<hr>
+
+{#2.将需要在子类中重写的内容使用block包含起来，并命名#}
+{% block contentBlock %}
+<h2>我是父模板的内容</h2>
+{% endblock %}
+
+
+<hr>
+<h2>我是bottom栏</h2>
+
+
+<body>
+
+</body>
+</html>
